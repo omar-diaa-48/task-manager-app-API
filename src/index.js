@@ -15,6 +15,7 @@ const tasksRouter = require('./routers/tasks')
 
 
 app.use(express.json())
+app.get('/', (req,res) => res.send('Hello'))
 app.use('/users', usersRouter)
 app.use('/tasks', tasksRouter)
 
