@@ -104,6 +104,10 @@ const upload = multer({
 
 router.post('/me/avatar', upload.single('avatar'),(req,res) => {
     res.send('Uploaded')
+}, (error, req, res, next) => {
+    res.status(400).send({
+        error : error.message
+    })
 })
 
 module.exports = router
