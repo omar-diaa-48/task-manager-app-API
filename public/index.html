@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <p class="display-4">Hello</p>
+                <p class="display-4 text-primary">Hello</p>
                 <p>
                     This is the home page for the <b>task-manager</b> app.
                     Here you can find the end points you can use to access the API provided
@@ -29,6 +29,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td class="display-6" colspan="3">Users</td>
+                    </tr>
                     <tr>
                         <td>Sign up</td>
                         <td class="text-warning">Post</td>
@@ -74,12 +77,35 @@
                         <td class="text-danger">Delete</td>
                         <td>/users/me/avatar</td>
                     </tr>
+                    <tr>
+                        <td class="display-6" colspan="3">Tasks</td>
+                    </tr>
+                    <tr>
+                        <td>Create a task</td>
+                        <td class="text-warning">Post</td>
+                        <td>/tasks</td>
+                    </tr>
+                    <tr>
+                        <td>Update a task</td>
+                        <td class="text-info">Patch</td>
+                        <td>/tasks</td>
+                    </tr>
+                    <tr>
+                        <td>Delete a task</td>
+                        <td class="text-danger">Delete</td>
+                        <td>/tasks</td>
+                    </tr>
+                    <tr>
+                        <td>Get user's tasks</td>
+                        <td class="text-success">Get</td>
+                        <td>/tasks</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
         <div class="row">
             <div class="col-6">
-                <p class="display-4">Author: </p>
+                <p class="display-4 text-primary">Author: </p>
                 <img src="./images/avatar.jpg" class="img-thumbnail rounded" alt="author avatar">
                 <p>Omar Diaaeldine</p>
             </div>                    
