@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "env-cmd ./src/config/dev.env nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -26,5 +26,8 @@
     "shark": "^2.3.0",
     "sharp": "^0.28.2",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2"
   }
 }

@@ -1,9 +1,29 @@
+require('dotenv').config();
 const sgMail = require('@sendgrid/mail');
-const sgMailAPIKey = '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'
-sgMail.setApiKey(sgMailAPIKey)
-sgMail.send({
-    to:'omardiaaelwakeel@gmail.com',
-    from:'iv_3422@hotmail.com',
-    subject:'test-email',
-    text:'This is a test email. You can dumb it'
-})
+// const sgMailAPIKey = process.env.SGMAILAPIKEY
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+const sendWelcomeEmail = (email, name) => {
+    sgMail.send({
+        to:email,
+        from:'iv_3422@hotmail.com',
+        subject:`Welcome ${name} to task-manager`,
+        text:`Welcome to the app, ${name}. Let me know how you get along with the app.`
+    })
+    console.log(`${email}, ${name}`);
+}
+
+const sendFollowCancelEmail = (email, name) => {
+    sgMail.send({
+        to:email,
+        from:'iv_3422@hotmail.com',
+        subject:`Sorry to see you leave ${name} :(`,
+        text:`Please let us know why did you leave, so we can provide better service next time. Thanks for the good times :)`
+    })
+    console.log(`${email}, ${name}`);
+}
+
+module.exports = {
+    sendWelcomeEmail,
+    sendFollowCancelEmail
+}

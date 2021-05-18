@@ -3,6 +3,7 @@ const User = require('../models/user');
 const auth = require('../middleware/auth')
 const multer = require('multer');
 const sharp = require('sharp');
+const { sendWelcomeEmail, sendFollowCancelEmail } = require('../emails/account');
 
 const router = express.Router()
 
@@ -15,13 +16,16 @@ router.post('/login', async (req,res) => {
         res.send({user, token})
     } catch (error) {
         res.status(400).send('Cant login')
-    }
+    } 
 })
 
 router.post('/signup', (req,res) => {
     const user = new User(req.body)
     user.save()
-        .then(() => res.redirect(307, '/users/login'))
+        .then(() => {
+            sendWelcomeEmail(user.email, user.name)
+            return res.redirect(307, '/users/login')
+        })
         .catch(error => res.status(400).send(error))
 })
 
@@ -82,6 +86,7 @@ router.delete('/me', auth, async (req,res) => {
         // const user = await User.findByIdAndDelete(req.user._id)
         // if(!user) return res.status(404).send('User not found')
         await req.user.remove()
+        sendFollowCancelEmail(req.user.email, req.user.name)
         res.send(req.user)
     } catch (error) {
         res.status(500).send(error)
