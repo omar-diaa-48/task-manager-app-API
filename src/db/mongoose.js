@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
 
 // const databaseName = 'task-manager'
 // const connectionURL = `mongodb+srv://iti-user:${process.env.password}@cluster0.tg0ks.mongodb.net/${databaseName}?retryWrites=true&w=majority`

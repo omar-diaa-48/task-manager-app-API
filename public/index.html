@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Document</title> 
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl' crossorigin='anonymous'>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js' integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0' crossorigin='anonymous'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <p class="display-4">Hello</p>
+                <p>
+                    This is the home page for the <b>task-manager</b> app.
+                    Here you can find the end points you can use to access the API provided
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Request</th>
+                        <th scope="col">Method</th>
+                        <th scope="col">End point</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sign up</td>
+                        <td class="text-warning">Post</td>
+                        <td>/users/signup</td>
+                    </tr>
+                    <tr>
+                        <td>Log in</td>
+                        <td class="text-warning">Post</td>
+                        <td>/users/login</td>
+                    </tr>
+                    <tr>
+                        <td>Account details</td>
+                        <td class="text-success">Get</td>
+                        <td>/users/me</td>
+                    </tr>
+                    <tr>
+                        <td>Log out from current device</td>
+                        <td class="text-warning">Post</td>
+                        <td>/users/logout</td>
+                    </tr>
+                    <tr>
+                        <td>Log out from all connected devices</td>
+                        <td class="text-warning">Post</td>
+                        <td>/users/logoutAll</td>
+                    </tr>
+                    <tr>
+                        <td>Update user data</td>
+                        <td class="text-info">Patch</td>
+                        <td>/users/me</td>
+                    </tr>
+                    <tr>
+                        <td>Delete user account</td>
+                        <td class="text-danger">Delete</td>
+                        <td>/users/me</td>
+                    </tr>
+                    <tr>
+                        <td>Upload user avatar</td>
+                        <td class="text-warning">Post</td>
+                        <td>/users/me/avatar</td>
+                    </tr>
+                    <tr>
+                        <td>Delete user avatar</td>
+                        <td class="text-danger">Delete</td>
+                        <td>/users/me/avatar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p class="display-4">Author: </p>
+                <img src="./images/avatar.jpg" class="img-thumbnail rounded" alt="author avatar">
+                <p>Omar Diaaeldine</p>
+            </div>                    
+        </div>
+    </div>
+</body>
+</html>
